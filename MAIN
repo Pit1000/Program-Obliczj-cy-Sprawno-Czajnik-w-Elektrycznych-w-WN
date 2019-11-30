@@ -1,0 +1,62 @@
+import java.util.Scanner;
+	public class SPRAWNOŚĆGRZAŁEK {
+		public static void main(String[] args) {
+			Scanner ln = new Scanner (System.in);
+			//ln.nextLine();
+			System.out.println("PITER FOLTEST COMPANY");
+			System.out.println("PROGRAM OBLICZAJĄCY SPRAWNOŚĆ CZAJNIKÓW ELEKTRYCZNYCH W WARUNKACH NORMALNYCH");
+			System.out.println(" ");
+			boolean zapytanie = true;
+			Scanner s = new Scanner (System.in);
+			
+			ln.nextLine();
+			while(zapytanie){
+				System.out.println("Podaj moc (wartość mocy czynnej) grzałki czajnika elektrycznego w watach [W]");
+				System.out.print("->");
+				double p = s.nextDouble();
+				if (p<=0){
+				 System.out.println("Błąd Moc<=0, podaj ponownie wartość mocy czynnej!");
+				}
+								
+				System.out.println("Podaj temperaturę początkową wody w stopniach celcjusza [°C]");
+				System.out.print("->");
+				double temp0 = s.nextDouble();
+				
+				System.out.println("Podaj objętość wody jaką chcesz zagotować w litrach [L]");
+				System.out.print("->");
+				double m = s.nextDouble();     
+				System.out.println("Podaj czas w jakim zagotowała się woda w sekundach [s]");  
+				System.out.print("->"); 
+				double tz = s.nextDouble();       
+				
+				                   
+				
+				System.out.println("Wartość mocy wydzielanej na grzałce "+ p +" W");
+				System.out.println("Temperatura początkowa wody " + temp0 + " °C");
+				System.out.println("Objętość gotowanej wody " + m + " L");
+				System.out.println("Czas zagotowania wody " + tz + " s");
+				System.out.println("Czy wporwadzone dane się zgadzają [Y/N]");
+				
+				String h = s.nextLine();
+				h = s.nextLine();
+			
+				if((h.equals("Y"))||(h.equals("y"))){
+					System.out.println("Przchodzę do obliczeń");
+					double n;
+					double deltaT;
+					deltaT = 100 - temp0;
+					if(p*tz<=0)
+						System.out.println("Wprowadzono nie prawidłowe dane");
+					else if(p*tz>0){
+					n = (m*deltaT*4187)/(p*tz);
+					System.out.println("Sprawność wynosi "+n*100+" %" );
+					zapytanie = false; 
+					}
+				if ((h.equals("n"))||(h.equals("N")))
+					zapytanie = true;
+							
+					
+				}	
+		        }                  
+		}
+	}
