@@ -1,1 +1,1 @@
-#### program for calculating the parameters of an electric kettle from several physical quantities
+#### program for calculating the parameters of an electric kettle from several physical quantities under normal conditions
